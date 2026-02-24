@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rakesh Shrestha | Cloud & DevOps Engineer</title>
+    <meta
+      name="description"
+      content="Rakesh Shrestha is a Cloud and DevOps Engineer with 13+ years of experience in AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, and security-first infrastructure."
+    />
+    <meta
+      name="keywords"
+      content="Rakesh Shrestha, Cloud Engineer, DevOps Engineer, AWS, Azure, GCP, Kubernetes, Docker, Terraform, CI/CD, DevSecOps"
+    />
+    <meta name="author" content="Rakesh Shrestha" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="https://shrestha-rakesh.com.np/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Rakesh Shrestha Portfolio" />
+    <meta
+      property="og:title"
+      content="Rakesh Shrestha | Cloud & DevOps Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Cloud and DevOps Engineer building scalable, secure, and automated infrastructure."
+    />
+    <meta property="og:url" content="https://shrestha-rakesh.com.np/" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop&crop=face"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Rakesh Shrestha | Cloud & DevOps Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Cloud and DevOps Engineer building scalable, secure, and automated infrastructure."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop&crop=face"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Rakesh Shrestha",
+            "jobTitle": "Cloud & DevOps Engineer",
+            "url": "https://shrestha-rakesh.com.np/",
+            "email": "mailto:contact@shrestha-rakesh.com.np",
+            "sameAs": ["https://www.linkedin.com/in/rakesh-shrestha-4bb93aa7/"]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Rakesh Shrestha Portfolio",
+            "url": "https://shrestha-rakesh.com.np/",
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                900: "#0c4a6e",
+              },
+              accent: {
+                500: "#8b5cf6",
+                600: "#7c3aed",
+              },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              gradient: "gradient 8s linear infinite",
+              "spin-slow": "spin 3s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              gradient: {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <base target="_blank" />
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans overflow-x-hidden"
+  >
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 glass transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="font-display font-bold text-2xl tracking-tighter">
+              RS<span class="text-primary-500">.</span>
+            </span>
+          </div>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-sm font-medium hover:text-primary-500 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-sm font-medium hover:text-primary-500 transition-colors"
+              >About</a
+            >
+            <a
+              href="#tools"
+              class="nav-link text-sm font-medium hover:text-primary-500 transition-colors"
+              >Tools</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-sm font-medium hover:text-primary-500 transition-colors"
+              >Contact</a
+            >
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <button
+              onclick="toggleDarkMode()"
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors"
+            >
+              <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+              <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+            <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-2">
+          <a
+            href="#home"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-slate-800"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-slate-800"
+            >About</a
+          >
+          <a
+            href="#tools"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-slate-800"
+            >Tools</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-slate-800"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-grid pt-16"
+    >
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute -top-40 -right-40 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl animate-pulse-slow"
+          style="animation-delay: 2s"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8 animate-fade-in">
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-medium border border-primary-200 dark:border-primary-800"
+            >
+              <span
+                class="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"
+              ></span>
+              Available for opportunities
+            </div>
+
+            <h1
+              class="font-display text-5xl md:text-7xl font-bold leading-tight"
+            >
+              Hi, I'm <span class="text-gradient">Rakesh</span><br />
+              <span class="text-gray-600 dark:text-gray-400">Shrestha</span>
+            </h1>
+
+            <p
+              class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed"
+            >
+              Cloud Architect & DevOps Engineer crafting scalable infrastructure
+              and intelligent solutions.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                class="group relative px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              >
+                <span class="relative z-10 flex items-center gap-2">
+                  Get in Touch
+                  <i
+                    data-lucide="arrow-right"
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </span>
+              </a>
+              <a
+                href="#tools"
+                class="px-8 py-4 border-2 border-gray-300 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 font-semibold rounded-full transition-all hover:scale-105"
+              >
+                View Tools
+              </a>
+            </div>
+
+            <div class="flex items-center gap-6 pt-4">
+              <!-- <a
+                href="#"
+                class="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                <i data-lucide="github" class="w-6 h-6"></i>
+              </a> -->
+              <a
+                href="https://www.linkedin.com/in/rakesh-shrestha-4bb93aa7/"
+                class="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                <i data-lucide="linkedin" class="w-6 h-6"></i>
+              </a>
+              <!-- <a
+                href="#"
+                class="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                <i data-lucide="twitter" class="w-6 h-6"></i>
+              </a> -->
+              <a
+                href="mailto:contact@shrestha-rakesh.com.np"
+                class="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="relative lg:h-[600px] flex items-center justify-center">
+            <div class="relative w-80 h-80 md:w-96 md:h-96 animate-float">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full opacity-20 blur-2xl"
+              ></div>
+              <img
+                src="./assets/rakesh-shrestha.jpeg"
+                alt="Rakesh Shrestha"
+                class="relative w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white dark:border-slate-800"
+              />
+
+              <!-- Floating Cards -->
+              <div
+                class="absolute -right-8 top-10 glass p-4 rounded-2xl shadow-lg animate-bounce"
+                style="animation-duration: 3s"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="cloud" class="w-5 h-5 text-primary-600"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Experience
+                    </p>
+                    <p class="font-bold text-sm">
+                      <span data-experience-start-year="2013">13+</span> Years
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute -left-8 bottom-20 glass p-4 rounded-2xl shadow-lg animate-bounce"
+                style="animation-duration: 4s"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-accent-100 dark:bg-accent-900 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="shield" class="w-5 h-5 text-accent-600"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Focus
+                    </p>
+                    <p class="font-bold text-sm">Security First</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-6">
+            <h2 class="font-display text-4xl md:text-5xl font-bold">
+              About <span class="text-gradient">Me</span>
+            </h2>
+            <div
+              class="space-y-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+            >
+              <p>
+                Detail-oriented professional with over
+                <strong class="text-gray-900 dark:text-white"
+                  ><span data-experience-start-year="2013">13+</span> years of
+                  experience</strong
+                >
+                in the IT Industry, proficient with the latest Cloud
+                technologies, DevOps tools, and Security practices.
+              </p>
+              <p>
+                I'm passionate about bringing
+                <strong class="text-gray-900 dark:text-white"
+                  >fast and intelligent solutions</strong
+                >
+                to organizations. I maintain a high level of professionalism
+                while providing consistent and quality service.
+              </p>
+              <p>
+                As a fast learner, I welcome the challenge to learn and develop
+                new skills. I believe in automation, infrastructure as code, and
+                building resilient systems that scale.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6 pt-6">
+              <div
+                class="text-center p-4 rounded-2xl bg-gray-50 dark:bg-slate-800"
+              >
+                <div class="text-3xl font-bold text-primary-500 mb-1">
+                  <span data-experience-start-year="2013">13+</span>
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  Years Exp.
+                </div>
+              </div>
+              <div
+                class="text-center p-4 rounded-2xl bg-gray-50 dark:bg-slate-800"
+              >
+                <div class="text-3xl font-bold text-accent-500 mb-1">50+</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  Projects
+                </div>
+              </div>
+              <div
+                class="text-center p-4 rounded-2xl bg-gray-50 dark:bg-slate-800"
+              >
+                <div class="text-3xl font-bold text-green-500 mb-1">99%</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  Uptime
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl transform rotate-3 opacity-20"
+            ></div>
+            <div class="relative glass rounded-3xl p-8 space-y-6">
+              <h3 class="font-display text-2xl font-bold mb-6">
+                Core Expertise
+              </h3>
+
+              <div class="space-y-4">
+                <div
+                  class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-slate-800 hover:bg-primary-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <i
+                      data-lucide="cloud-cog"
+                      class="w-6 h-6 text-primary-600"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Cloud Architecture</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      AWS, Azure, GCP, Digital Ocean
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-slate-800 hover:bg-primary-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-accent-100 dark:bg-accent-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <i
+                      data-lucide="container"
+                      class="w-6 h-6 text-accent-600"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">DevOps & CI/CD</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Docker, Kubernetes, Jenkins
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-slate-800 hover:bg-primary-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <i
+                      data-lucide="shield-check"
+                      class="w-6 h-6 text-green-600"
+                    ></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Security & IAM</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Okta, DevSecOps, Compliance
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-slate-800 hover:bg-primary-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <i data-lucide="code-2" class="w-6 h-6 text-orange-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold">Infrastructure as Code</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Terraform, Ansible, CloudFormation
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section
+      id="tools"
+      class="py-24 bg-gray-50 dark:bg-slate-950 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-grid"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-16">
+          <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+            Tools & <span class="text-gradient">Technologies</span>
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            My favorite tools for version control, code editing, container
+            orchestration, cloud infrastructure, and database management.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <!-- Cloud Platforms -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="cloud" class="w-8 h-8 text-yellow-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">AWS</h3>
+            <p class="text-xs text-gray-500 mt-1">Cloud Platform</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="cloud" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Azure</h3>
+            <p class="text-xs text-gray-500 mt-1">Cloud Platform</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="cloud" class="w-8 h-8 text-green-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">GCP</h3>
+            <p class="text-xs text-gray-500 mt-1">Cloud Platform</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="droplets" class="w-8 h-8 text-blue-500"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Digital Ocean</h3>
+            <p class="text-xs text-gray-500 mt-1">Cloud Platform</p>
+          </div>
+
+          <!-- Security & IAM -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="shield" class="w-8 h-8 text-blue-700"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Okta</h3>
+            <p class="text-xs text-gray-500 mt-1">Identity Management</p>
+          </div>
+
+          <!-- Container & Orchestration -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="container" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Docker</h3>
+            <p class="text-xs text-gray-500 mt-1">Containerization</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="boxes" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Kubernetes</h3>
+            <p class="text-xs text-gray-500 mt-1">Orchestration</p>
+          </div>
+
+          <!-- IaC & Automation -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="file-code" class="w-8 h-8 text-purple-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Terraform</h3>
+            <p class="text-xs text-gray-500 mt-1">IaC</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="workflow" class="w-8 h-8 text-red-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Jenkins</h3>
+            <p class="text-xs text-gray-500 mt-1">CI/CD</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="layout" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Ansible</h3>
+            <p class="text-xs text-gray-500 mt-1">Automation</p>
+          </div>
+
+          <!-- Version Control -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="git-branch" class="w-8 h-8 text-orange-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Git</h3>
+            <p class="text-xs text-gray-500 mt-1">Version Control</p>
+          </div>
+
+          <!-- Monitoring -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-cyan-100 dark:bg-cyan-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="monitor" class="w-8 h-8 text-cyan-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Prometheus</h3>
+            <p class="text-xs text-gray-500 mt-1">Monitoring</p>
+          </div>
+
+          <!-- Operating Systems -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="terminal" class="w-8 h-8 text-indigo-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Linux</h3>
+            <p class="text-xs text-gray-500 mt-1">OS</p>
+          </div>
+
+          <!-- Databases -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="leaf" class="w-8 h-8 text-green-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">MongoDB</h3>
+            <p class="text-xs text-gray-500 mt-1">NoSQL Database</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="database" class="w-8 h-8 text-blue-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">PostgreSQL</h3>
+            <p class="text-xs text-gray-500 mt-1">SQL Database</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="database" class="w-8 h-8 text-orange-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">MySQL</h3>
+            <p class="text-xs text-gray-500 mt-1">SQL Database</p>
+          </div>
+
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="server" class="w-8 h-8 text-red-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">SQL Server</h3>
+            <p class="text-xs text-gray-500 mt-1">SQL Database</p>
+          </div>
+
+          <!-- Web Servers -->
+          <div
+            class="skill-card glass p-6 rounded-2xl text-center group cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
+            >
+              <i data-lucide="flame" class="w-8 h-8 text-orange-600"></i>
+            </div>
+            <h3 class="font-semibold text-sm">Apache</h3>
+            <p class="text-xs text-gray-500 mt-1">Web Server</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-grid"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="glass rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div class="text-center mb-12">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">
+              Let's Work <span class="text-gradient">Together</span>
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400">
+              Have a project in mind? Let's discuss how I can help you achieve
+              your goals.
+            </p>
+          </div>
+
+          <form id="form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium mb-2">Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Email *</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Subject *</label>
+              <input
+                type="text"
+                name="subject"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all"
+                placeholder="Project Inquiry"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Message *</label>
+              <textarea
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-700 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              id="button"
+              class="w-full py-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-bold rounded-xl hover:shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+            >
+              <span id="btn-text">Send Email</span>
+              <i data-lucide="send" class="w-5 h-5" id="btn-icon"></i>
+              <div id="btn-spinner" class="spinner hidden"></div>
+            </button>
+          </form>
+
+          <div
+            class="grid md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-200 dark:border-gray-800"
+          >
+            <a
+              href="mailto:contact@shrestha-rakesh.com.np"
+              class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors group"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-accent-100 dark:bg-accent-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="mail" class="w-5 h-5 text-primary-600"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="font-medium text-sm">rakeyshreshta@gmail.com</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/rakesh-shrestha-4bb93aa7/"
+              class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors group"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-accent-100 dark:bg-accent-900 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5 text-accent-600"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">LinkedIn</p>
+                <p class="font-medium text-sm">Connect with me</p>
+              </div>
+            </a>
+
+            <!-- <a
+              href="#"
+              class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors group"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center group-hover:scale-110 transition-transform"
+              >
+                <i data-lucide="github" class="w-5 h-5 text-gray-600"></i>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">GitHub</p>
+                <p class="font-medium text-sm">View my code</p>
+              </div>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-50 dark:bg-slate-950 border-t border-gray-200 dark:border-gray-800 py-12"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold text-2xl tracking-tighter">
+            RS<span class="text-primary-500">.</span>
+          </span>
+          <span class="text-gray-500 dark:text-gray-400"
+            >© 2024 Rakesh Shrestha. All rights reserved.</span
+          >
+        </div>
+
+        <div class="flex items-center gap-6">
+          <!-- <a
+            href="#"
+            class="text-gray-400 hover:text-primary-500 transition-colors"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a> -->
+          <a
+            href="https://www.linkedin.com/in/rakesh-shrestha-4bb93aa7/"
+            class="text-gray-400 hover:text-primary-500 transition-colors"
+          >
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <!-- <a
+            href="#"
+            class="text-gray-400 hover:text-primary-500 transition-colors"
+          >
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a> -->
+        </div>
+      </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div
+      id="notification"
+      class="fixed bottom-8 right-8 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-24 transition-transform duration-300 flex items-center gap-3 z-50"
+    >
+      <i data-lucide="check-circle" class="w-5 h-5"></i>
+      <span id="notification-text">Message sent successfully!</span>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
