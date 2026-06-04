@@ -4,10 +4,16 @@
   "description": "Personal portfolio website for Rakesh Shrestha",
   "private": true,
   "scripts": {
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
+    "dev:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
+    "build": "npm run build:css",
+    "prestart": "npm run build:css",
+    "predev": "npm run build:css",
     "start": "serve .",
     "dev": "serve . -p 3000"
   },
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "tailwindcss": "^3.4.17"
   }
 }

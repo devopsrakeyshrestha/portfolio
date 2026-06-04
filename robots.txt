@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shrestha-rakesh.com.np/sitemap.xml

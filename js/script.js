@@ -1,5 +1,8 @@
-// Initialize Lucide icons.
-lucide.createIcons();
+const EXPERIENCE_START_YEAR = 2013;
+
+const EMAILJS_PUBLIC_KEY = "rIFWAqkoGkeRVckn6";
+const EMAILJS_SERVICE_ID = "service_wb09crv";
+const EMAILJS_TEMPLATE_ID = "template_cnj33wg";
 
 function getExperienceYears(startYear) {
   return `${Math.max(0, new Date().getFullYear() - startYear)}+`;
@@ -14,24 +17,34 @@ function updateExperienceYears() {
   });
 }
 
-updateExperienceYears();
-
-const descriptionMeta = document.querySelector('meta[name="description"]');
-if (descriptionMeta) {
-  descriptionMeta.setAttribute(
-    "content",
-    `Rakesh Shrestha is a Cloud and DevOps Engineer with ${getExperienceYears(2013)} years of experience in AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, and security-first infrastructure.`,
-  );
+function updateMetaDescription() {
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  if (descriptionMeta) {
+    descriptionMeta.setAttribute(
+      "content",
+      `Rakesh Shrestha is a Cloud and DevOps Engineer with ${getExperienceYears(EXPERIENCE_START_YEAR)} years of experience in AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, and security-first infrastructure.`,
+    );
+  }
 }
 
-// EmailJS configuration.
-const EMAILJS_PUBLIC_KEY = "rIFWAqkoGkeRVckn6";
-const EMAILJS_SERVICE_ID = "service_wb09crv";
-const EMAILJS_TEMPLATE_ID = "template_cnj33wg";
+function initFooterYear() {
+  const footerYear = document.getElementById("footer-year");
+  if (footerYear) {
+    footerYear.textContent = String(new Date().getFullYear());
+  }
+}
 
-(function initEmailJs() {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-})();
+function initIcons() {
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+}
+
+function initEmailJs() {
+  if (typeof emailjs !== "undefined") {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
+}
 
 function toggleDarkMode() {
   document.documentElement.classList.toggle("dark");
@@ -41,24 +54,26 @@ function toggleDarkMode() {
   );
 }
 
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  document.documentElement.classList.remove("dark");
-} else {
-  document.documentElement.classList.add("dark");
-  if (!savedTheme) {
-    localStorage.setItem("theme", "dark");
-  }
+function setMobileMenuOpen(isOpen) {
+  const menu = document.getElementById("mobile-menu");
+  const toggle = document.getElementById("mobile-menu-toggle");
+  if (!menu || !toggle) return;
+
+  menu.classList.toggle("hidden", !isOpen);
+  toggle.setAttribute("aria-expanded", String(isOpen));
+  toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 }
 
 function toggleMobileMenu() {
   const menu = document.getElementById("mobile-menu");
-  menu.classList.toggle("hidden");
+  if (!menu) return;
+  setMobileMenuOpen(menu.classList.contains("hidden"));
 }
 
 function showNotification(message, type = "success") {
   const notification = document.getElementById("notification");
   const notificationText = document.getElementById("notification-text");
+  if (!notification || !notificationText) return;
 
   notificationText.textContent = message;
 
@@ -71,92 +86,152 @@ function showNotification(message, type = "success") {
   }
 
   notification.classList.remove("translate-y-24");
-  setTimeout(() => {
+  window.setTimeout(() => {
     notification.classList.add("translate-y-24");
   }, 3000);
 }
 
-const contactForm = document.getElementById("form");
-const submitBtn = document.getElementById("button");
-const btnText = document.getElementById("btn-text");
-const btnIcon = document.getElementById("btn-icon");
-const btnSpinner = document.getElementById("btn-spinner");
-
 function setSubmittingState(isSubmitting) {
-  if (isSubmitting) {
-    submitBtn.disabled = true;
-    btnText.textContent = "Sending...";
-    btnIcon.classList.add("hidden");
-    btnSpinner.classList.remove("hidden");
-  } else {
-    submitBtn.disabled = false;
-    btnText.textContent = "Send Email";
-    btnIcon.classList.remove("hidden");
-    btnSpinner.classList.add("hidden");
+  const submitBtn = document.getElementById("button");
+  const btnText = document.getElementById("btn-text");
+  const btnIcon = document.getElementById("btn-icon");
+  const btnSpinner = document.getElementById("btn-spinner");
+  if (!submitBtn || !btnText || !btnIcon || !btnSpinner) return;
+
+  submitBtn.disabled = isSubmitting;
+  btnText.textContent = isSubmitting ? "Sending..." : "Send Email";
+  btnIcon.classList.toggle("hidden", isSubmitting);
+  btnSpinner.classList.toggle("hidden", !isSubmitting);
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function onAnchorClick(event) {
+      const href = this.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+        block: "start",
+      });
+      setMobileMenuOpen(false);
+    });
+  });
+}
+
+function initSkillCardObserver() {
+  if (prefersReducedMotion()) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+  );
+
+  document.querySelectorAll(".skill-card").forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    observer.observe(el);
+  });
+}
+
+function initNavbarScroll() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("shadow-lg", window.scrollY > 50);
+  });
+}
+
+function initContactForm() {
+  const contactForm = document.getElementById("form");
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", function onContactSubmit(event) {
+    event.preventDefault();
+
+    const honeypot = contactForm.querySelector('[name="website"]');
+    if (honeypot && honeypot.value.trim() !== "") {
+      showNotification("Message sent successfully.", "success");
+      contactForm.reset();
+      return;
+    }
+
+    if (typeof emailjs === "undefined") {
+      showNotification(
+        "Email service is unavailable. Please email contact@shrestha-rakesh.com.np directly.",
+        "error",
+      );
+      return;
+    }
+
+    setSubmittingState(true);
+
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm).then(
+      () => {
+        setSubmittingState(false);
+        showNotification("Message sent successfully.");
+        contactForm.reset();
+      },
+      (err) => {
+        setSubmittingState(false);
+        showNotification(
+          "Could not send your message. Please try again or email contact@shrestha-rakesh.com.np.",
+          "error",
+        );
+        console.error("EmailJS error:", err);
+      },
+    );
+  });
+}
+
+function initThemeToggle() {
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle?.addEventListener("click", toggleDarkMode);
+
+  const savedTheme = localStorage.getItem("theme");
+  if (!savedTheme) {
+    localStorage.setItem("theme", "dark");
   }
 }
 
-contactForm.addEventListener("submit", function onContactSubmit(event) {
-  event.preventDefault();
-  setSubmittingState(true);
+function initMobileMenu() {
+  const toggle = document.getElementById("mobile-menu-toggle");
+  toggle?.addEventListener("click", toggleMobileMenu);
 
-  emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this).then(
-    () => {
-      setSubmittingState(false);
-      showNotification("Message Sent Successfully");
-      contactForm.reset();
-    },
-    (err) => {
-      setSubmittingState(false);
-      const authScopeError =
-        "Gmail_API: Request had insufficient authentication scopes.";
-      showNotification(authScopeError, "error");
-      alert(authScopeError);
-      console.error(authScopeError, err);
-    },
-  );
-});
-
-window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("shadow-lg");
-  } else {
-    navbar.classList.remove("shadow-lg");
-  }
-});
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function onAnchorClick(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      document.getElementById("mobile-menu").classList.add("hidden");
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileMenuOpen(false);
     }
   });
-});
+}
 
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll(".skill-card").forEach((el) => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  observer.observe(el);
+document.addEventListener("DOMContentLoaded", () => {
+  updateExperienceYears();
+  updateMetaDescription();
+  initFooterYear();
+  initIcons();
+  initEmailJs();
+  initThemeToggle();
+  initMobileMenu();
+  initContactForm();
+  initNavbarScroll();
+  initSmoothScroll();
+  initSkillCardObserver();
 });
