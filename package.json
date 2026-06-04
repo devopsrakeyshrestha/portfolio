@@ -1,0 +1,13 @@
+{
+  "name": "rakhesh-shrestha-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Rakesh Shrestha",
+  "private": true,
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve . -p 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
