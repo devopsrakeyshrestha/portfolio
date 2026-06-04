@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
     "dev:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
-    "build": "npm run build:css",
+    "build": "npm run build:css && node scripts/prepare-public.mjs",
     "prestart": "npm run build:css",
     "predev": "npm run build:css",
     "start": "serve .",

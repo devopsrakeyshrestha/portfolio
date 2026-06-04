@@ -35,9 +35,17 @@ Open http://localhost:3000
 
 ## Deploy
 
-Static hosting works on Netlify, Cloudflare Pages, GitHub Pages, or S3 + CloudFront. Run `npm run build` before deploy so `css/styles.css` is up to date.
+### Vercel (recommended)
 
-For Netlify/Cloudflare, configure a SPA-style fallback to `404.html` for unknown routes if needed.
+The repo includes `vercel.json`. Vercel runs `npm run build`, which compiles CSS and copies the site into `public/` for deployment.
+
+Push to GitHub and connect the repo in Vercel, or run `vercel` from the CLI. Ensure the project **Output Directory** is `public` (set automatically via `vercel.json`).
+
+### Other hosts
+
+Run `npm run build` first. Deploy the contents of `public/` (or the repo root if you only copy `css/styles.css` and serve from root).
+
+For Netlify/Cloudflare, publish directory: `public` after build, or root with a build command of `npm run build`.
 
 ## Contact form
 
